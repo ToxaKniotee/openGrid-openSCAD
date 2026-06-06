@@ -95,7 +95,7 @@ Nudge = 0.01; //nudge the profile to avoid z-fighting
 snapWallThickness = 2;
 gripSize = 15;
 
-Suppress_List = str_split(upcase(Suppress_Connectors), ",");
+Suppress_List = str_split(upcase(Suppress_Connectors), ", ");
 //Convert the string to a list of strings. This is used to determine if the connector should be suppressed or not.
 
 ///*[Visual Options]*/
@@ -108,7 +108,7 @@ Show_Attached = false;
 //union() {
 color_this(Global_Color) diff() {
 
-  monokiniChannel(lengthMM = lengthMM, widthMM = channelWidth, heightMM = Channel_Total_Height, anchor = CENTER, orient = TOP, spin = 0, suppress = Suppress_List[0]) //str_pad(Suppress_List[0], Channel_Length_Units, "N")
+  monokiniChannel(lengthMM = lengthMM, widthMM = channelWidth, heightMM = Channel_Total_Height, anchor = CENTER, orient = TOP, spin = 0, suppress = Suppress_List) //str_pad(Suppress_List[0], Channel_Length_Units, "N")
 
   if (Cord_Side_Cutouts != "None" && Number_of_Cord_Cutouts > 0) {
     /*
